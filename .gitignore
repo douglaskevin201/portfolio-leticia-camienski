@@ -1,0 +1,24 @@
+# Personal documents and private files
+/docs/
+/private/
+*.pdf
+*.doc
+*.docx
+*.odt
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+
+# Local environment settings
+.env
+.env.*
+!.env.example
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local editor settings
+.vscode/
