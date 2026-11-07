@@ -42,6 +42,9 @@ Também é possível abrir `index.html` diretamente, mas o servidor local é rec
 │   ├── css/site.css
 │   ├── js/site.js
 │   └── projects/       # Imagens WebP organizadas por projeto
+├── docs/
+│   ├── Curriculo-Leticia-Camienski.pdf
+│   └── Leticia_Camienski_CV_English.pdf
 ├── index.html          # Página inicial
 ├── projeto.html        # Página e galeria de cada projeto
 ├── README.md
@@ -50,7 +53,7 @@ Também é possível abrir `index.html` diretamente, mas o servidor local é rec
 
 ### Documentos privados
 
-O currículo e outros arquivos pessoais podem continuar na pasta local `docs/`, mas essa pasta é excluída do Git pelo `.gitignore`. Arquivos PDF e documentos do Office também são ignorados. Essas regras ajudam a evitar a publicação acidental de documentos privados; confira sempre o conteúdo preparado para commit antes de enviar alterações.
+Os currículos de Leticia em português e inglês são publicados junto ao site e ficam disponíveis em `docs/`. Outros documentos pessoais, PDFs e arquivos do Office permanecem excluídos do Git pelas regras do `.gitignore`. Como os currículos estão no repositório público, seus conteúdos podem ser acessados por qualquer pessoa.
 
 ### Créditos
 
@@ -97,6 +100,9 @@ You can also open `index.html` directly, but using a local server is recommended
 │   ├── css/site.css
 │   ├── js/site.js
 │   └── projects/       # WebP images organized by project
+├── docs/
+│   ├── Curriculo-Leticia-Camienski.pdf
+│   └── Leticia_Camienski_CV_English.pdf
 ├── index.html          # Home page
 ├── projeto.html        # Project details and galleries
 ├── README.md
@@ -105,7 +111,7 @@ You can also open `index.html` directly, but using a local server is recommended
 
 ### Private documents
 
-The résumé and other personal files may remain in the local `docs/` folder, which is excluded from Git by `.gitignore`. PDF and Office documents are also ignored. These rules help prevent accidental publication of private documents; always review staged files before committing changes.
+Leticia's Portuguese and English résumés are published with the website in the `docs/` directory. Other personal documents, PDFs, and Office files remain excluded from Git by `.gitignore`. Because the résumés are in a public repository, their contents are accessible to anyone.
 
 ### Credits
 

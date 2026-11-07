@@ -1,5 +1,5 @@
 # Personal documents and private files
-/docs/
+/docs/*
 /private/
 *.pdf
 *.doc
@@ -9,6 +9,8 @@
 *.xlsx
 *.ppt
 *.pptx
+!/docs/Curriculo-Leticia-Camienski.pdf
+!/docs/Leticia_Camienski_CV_English.pdf
 
 # Local environment settings
 .env
