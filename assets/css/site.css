@@ -35,6 +35,9 @@ img { display: block; max-width: 100%; }
 .main-nav a:hover { opacity: .68; }
 .nav-contact { padding: .65rem 0 .65rem 1.2rem; border-left: 1px solid currentColor; }
 .nav-contact span { margin-left: .35rem; }
+.language-toggle { padding: .55rem .7rem; border: 1px solid currentColor; background: transparent; color: inherit; font: inherit; letter-spacing: inherit; cursor: pointer; transition: opacity .25s ease; }
+.language-toggle:hover { opacity: .72; }
+.project-header-actions { display: flex; align-items: center; gap: 1.4rem; }
 
 .hero { position: relative; min-height: 690px; height: 100svh; max-height: 1100px; overflow: hidden; background: #55544d; color: var(--white); }
 .hero-slides, .hero-slide, .hero-image, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -55,6 +58,8 @@ img { display: block; max-width: 100%; }
 .button-light:hover { color: var(--ink); background: var(--white); }
 .button-dark { border-color: var(--ink); color: var(--white); background: var(--ink); }
 .button-dark:hover { color: var(--ink); background: transparent; }
+.button-outline { border-color: var(--ink); color: var(--ink); }
+.button-outline:hover { color: var(--white); background: var(--ink); }
 .hero-bottom { position: absolute; z-index: 4; right: 6.2%; bottom: 3.15rem; left: 6.2%; display: flex; align-items: center; gap: 1.2rem; }
 .hero-index { display: flex; align-items: center; gap: .52rem; min-width: 53px; font-size: .68rem; letter-spacing: .15em; }
 .index-divider { opacity: .53; }
@@ -103,6 +108,8 @@ img { display: block; max-width: 100%; }
 .about-copy > p:not(.eyebrow) { max-width: 600px; color: #5d5c55; font-size: .91rem; }
 .text-link { display: inline-flex; align-items: center; gap: .8rem; margin-top: .8rem; padding-bottom: .35rem; border-bottom: 1px solid var(--olive); font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; transition: gap .25s ease; }
 .text-link:hover { gap: 1.15rem; }
+.resume-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.5rem; }
+.resume-actions .button { margin: 0; }
 
 .contact-section { padding: clamp(5.5rem, 10vw, 9.5rem) 1.5rem; text-align: center; }
 .contact-section h2 { margin: 0 auto 2rem; }
@@ -113,6 +120,8 @@ img { display: block; max-width: 100%; }
 .footer-links { display: flex; justify-content: end; gap: 1.35rem; font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; }
 .footer-links a:hover { color: #c9c4b5; }
 .site-footer small { grid-column: 1 / -1; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, .16); color: rgba(255, 255, 255, .52); font-size: .65rem; }
+.site-footer small a { text-decoration: underline; text-underline-offset: .2em; }
+.site-footer small a:hover { color: var(--white); }
 
 .reveal-ready [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform .8s cubic-bezier(.2, .7, .2, 1); }
 .reveal-ready [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
@@ -182,9 +191,10 @@ img { display: block; max-width: 100%; }
     .brand-mark { width: 34px; height: 34px; font-size: 1.3rem; }
     .brand-name { font-size: .86rem; }
     .brand-name small { font-size: .48rem; }
-    .main-nav { gap: .62rem; font-size: .54rem; letter-spacing: .055em; }
+    .main-nav { gap: .5rem; font-size: .54rem; letter-spacing: .055em; }
     .nav-contact { padding-left: .5rem; }
     .main-nav a[href="#sobre"] { display: none; }
+    .language-toggle { padding: .45rem .5rem; }
     .hero { min-height: 650px; height: 94svh; max-height: 850px; }
     .hero-image { object-position: 54% center; }
     .hero-shade { background: linear-gradient(90deg, rgba(20, 20, 17, .63), rgba(20, 20, 17, .12)), linear-gradient(0deg, rgba(20, 20, 17, .57), transparent 47%, rgba(20, 20, 17, .16)); }
@@ -220,6 +230,7 @@ img { display: block; max-width: 100%; }
     .footer-links { justify-content: start; flex-wrap: wrap; gap: 1rem; order: 2; }
     .site-footer small { grid-column: auto; margin-top: .5rem; order: 3; }
     .project-header { min-height: 74px; padding: .8rem 5%; }
+    .project-header-actions { gap: .7rem; }
     .back-link { gap: .4rem; font-size: .56rem; letter-spacing: .07em; }
     .project-intro { padding: 4.5rem 7% 3rem; }
     .project-intro h1 { font-size: clamp(2rem, 9.5vw, 3.2rem); }

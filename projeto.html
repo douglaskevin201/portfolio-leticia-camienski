@@ -12,14 +12,17 @@
     <script src="assets/js/site.js" defer></script>
 </head>
 <body class="project-page">
-    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <a class="skip-link" href="#conteudo" data-i18n="skipLink">Pular para o conteúdo</a>
 
     <header class="project-header">
-        <a class="brand brand-dark" href="index.html" aria-label="Voltar à página inicial">
+        <a class="brand brand-dark" href="index.html" aria-label="Voltar à página inicial" data-i18n-aria-label="homeLabel">
             <span class="brand-mark" aria-hidden="true">L</span>
-            <span class="brand-name">Leticia Camienski<small>Técnica em Edificações</small></span>
+            <span class="brand-name">Leticia Camienski<small data-i18n="profession">Técnica em Edificações</small></span>
         </a>
-        <a class="back-link" href="index.html#projetos"><span aria-hidden="true">←</span> Projetos</a>
+        <div class="project-header-actions">
+            <button class="language-toggle" type="button" data-language-toggle aria-label="Switch language to English">EN</button>
+            <a class="back-link" href="index.html#projetos"><span aria-hidden="true">←</span> <span data-i18n="projects">Projetos</span></a>
+        </div>
     </header>
 
     <main id="conteudo">
@@ -29,28 +32,28 @@
             <p class="project-description" id="project-description"></p>
             <p class="project-credit" id="project-credit"></p>
         </section>
-        <section class="gallery-section" aria-label="Imagens do projeto">
+        <section class="gallery-section" aria-label="Imagens do projeto" data-i18n-aria-label="projectImages">
             <div class="gallery-grid" id="gallery"></div>
         </section>
         <p class="project-not-found" id="project-not-found" hidden>
-            Este projeto não foi encontrado. <a href="index.html#projetos">Voltar à seleção de projetos</a>
+            <span data-i18n="projectNotFound">Este projeto não foi encontrado.</span> <a href="index.html#projetos" data-i18n="backToProjects">Voltar à seleção de projetos</a>
         </p>
         <div class="project-end">
-            <a class="text-link" href="index.html#projetos"><span aria-hidden="true">←</span> Voltar para os projetos</a>
+            <a class="text-link" href="index.html#projetos"><span aria-hidden="true">←</span> <span data-i18n="backToProjects">Voltar para os projetos</span></a>
         </div>
     </main>
 
-    <dialog class="lightbox" id="lightbox" aria-label="Visualização da imagem">
-        <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Fechar imagem">×</button>
-        <div class="lightbox-tools" role="group" aria-label="Controles da imagem">
+    <dialog class="lightbox" id="lightbox" aria-label="Visualização da imagem" data-i18n-aria-label="imageViewer">
+        <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Fechar imagem" data-i18n-aria-label="closeImage">×</button>
+        <div class="lightbox-tools" role="group" aria-label="Controles da imagem" data-i18n-aria-label="imageControls">
             <label for="lightbox-zoom">Zoom</label>
-            <input id="lightbox-zoom" type="range" min="1" max="4" step="0.1" value="1" aria-label="Nível de zoom">
+            <input id="lightbox-zoom" type="range" min="1" max="4" step="0.1" value="1" aria-label="Nível de zoom" data-i18n-aria-label="zoomLevel">
             <output id="lightbox-zoom-value" for="lightbox-zoom">100%</output>
-            <button class="lightbox-zoom-reset" id="lightbox-zoom-reset" type="button" aria-label="Redefinir zoom">Ajustar</button>
+            <button class="lightbox-zoom-reset" id="lightbox-zoom-reset" type="button" aria-label="Redefinir zoom" data-i18n-aria-label="resetZoom" data-i18n="fitImage">Ajustar</button>
         </div>
-        <button class="lightbox-arrow lightbox-previous" id="lightbox-previous" type="button" aria-label="Imagem anterior">←</button>
+        <button class="lightbox-arrow lightbox-previous" id="lightbox-previous" type="button" aria-label="Imagem anterior" data-i18n-aria-label="previousImage">←</button>
         <img id="lightbox-image" alt="" draggable="false">
-        <button class="lightbox-arrow lightbox-next" id="lightbox-next" type="button" aria-label="Próxima imagem">→</button>
+        <button class="lightbox-arrow lightbox-next" id="lightbox-next" type="button" aria-label="Próxima imagem" data-i18n-aria-label="nextImage">→</button>
         <p class="lightbox-count" id="lightbox-count"></p>
     </dialog>
 
