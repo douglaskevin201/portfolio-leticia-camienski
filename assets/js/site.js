@@ -24,6 +24,8 @@
             discoverProjects: "Descubra os projetos",
             previousProject: "Projeto anterior",
             nextProject: "Próximo projeto",
+            playSlideshow: "Iniciar apresentação",
+            pauseSlideshow: "Pausar apresentação",
             chooseFeaturedProject: "Escolher projeto em destaque",
             workSelection: "Seleção de trabalhos",
             projectsHeading: "Projetos desenvolvidos.",
@@ -85,6 +87,8 @@
             discoverProjects: "Discover the projects",
             previousProject: "Previous project",
             nextProject: "Next project",
+            playSlideshow: "Play slideshow",
+            pauseSlideshow: "Pause slideshow",
             chooseFeaturedProject: "Choose a featured project",
             workSelection: "Selected work",
             projectsHeading: "Selected projects.",
@@ -329,12 +333,26 @@
         const kicker = document.getElementById("hero-kicker");
         const link = document.getElementById("hero-link");
         const current = document.getElementById("hero-current");
+        const playbackControl = document.getElementById("hero-toggle");
         const progress = document.getElementById("hero-progress-bar")?.parentElement;
         const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
         const interval = 7000;
         let activeIndex = 0;
         let timer = 0;
-        let paused = false;
+        let userPaused = false;
+        let focusPaused = false;
+        let motionOverride = false;
+
+        function isPaused() {
+            return userPaused || focusPaused || document.hidden || (reducedMotion.matches && !motionOverride);
+        }
+
+        function updatePlaybackControl() {
+            if (!playbackControl) return;
+            const paused = isPaused();
+            playbackControl.textContent = paused ? "▶" : "Ⅱ";
+            playbackControl.setAttribute("aria-label", translate(paused ? "playSlideshow" : "pauseSlideshow"));
+        }
 
         function showSlide(index) {
             activeIndex = (index + slides.length) % slides.length;
@@ -369,7 +387,8 @@
 
         function startTimer() {
             window.clearInterval(timer);
-            if (reducedMotion.matches || paused || document.hidden || slides.length < 2) return;
+            updatePlaybackControl();
+            if (isPaused() || slides.length < 2) return;
             const animateProgress = () => {
                 if (!progress) return;
                 progress.classList.remove("is-running");
@@ -384,7 +403,8 @@
         }
 
         function navigateManually(index) {
-            paused = false;
+            userPaused = false;
+            focusPaused = false;
             showSlide(index);
             startTimer();
         }
@@ -399,19 +419,34 @@
             navigateManually(Number(dot.dataset.index));
         }));
         const hero = container.closest(".hero");
-        hero?.addEventListener("mouseenter", () => { paused = true; window.clearInterval(timer); });
-        hero?.addEventListener("mouseleave", () => { paused = false; startTimer(); });
-        hero?.addEventListener("focusin", () => { paused = true; window.clearInterval(timer); });
+        playbackControl?.addEventListener("click", () => {
+            if (isPaused()) {
+                userPaused = false;
+                focusPaused = false;
+                motionOverride = true;
+            } else {
+                userPaused = true;
+            }
+            startTimer();
+        });
+        hero?.addEventListener("focusin", (event) => {
+            if (event.target === playbackControl) return;
+            focusPaused = true;
+            startTimer();
+        });
         hero?.addEventListener("focusout", (event) => {
             if (!hero.contains(event.relatedTarget)) {
-                paused = false;
+                focusPaused = false;
                 startTimer();
             }
         });
         document.addEventListener("visibilitychange", startTimer);
         reducedMotion.addEventListener?.("change", startTimer);
 
-        refreshHeroLanguage = () => showSlide(activeIndex);
+        refreshHeroLanguage = () => {
+            showSlide(activeIndex);
+            updatePlaybackControl();
+        };
         showSlide(0);
         startTimer();
     }
