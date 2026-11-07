@@ -92,7 +92,7 @@
             aboutEyebrow: "About me",
             bimSpecialist: "BIM Specialist",
             aboutQuote: "“Always improving and finding ways to work accurately and efficiently.”",
-            aboutParagraphOne: "I am a Building Technician, BIM Modeler, and tenth-semester undergraduate student in Architecture and Urbanism. My work focuses on BIM modeling, technical documentation, and coordination of multidisciplinary projects.",
+            aboutParagraphOne: "I am a Building Technician, BIM Modeler, and 10th-semester undergraduate student in Architecture and Urbanism. My work focuses on BIM modeling, technical documentation, and coordination of multidisciplinary projects.",
             aboutParagraphTwo: "I have experience with structural, architectural, and building systems projects, using tools such as Revit, AutoCAD, and Navisworks. I also develop automations with Dynamo and PyRevit to optimize workflows and standardize deliverables.",
             resumeView: "View résumé",
             resumeDownload: "Download résumé",
